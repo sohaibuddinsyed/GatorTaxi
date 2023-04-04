@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 class RBTNode;
 
 class HeapNode {
@@ -38,6 +39,20 @@ public:
         heapifyUp(back);
         back++;
     }
+    
+    void getTopNode () {
+        heap[0] -> printHeapNode();
+    }
+    
+    HeapNode* top () {
+        return heap[0];
+    }
+
+    void pop() {
+        back--;
+        heap[0] = heap[back];
+        heapifyDown(0);
+    }
 
     void heapifyUp(int index) {
         if(index == 0) return;
@@ -52,19 +67,6 @@ public:
         else return;
 
         heapifyUp(parent);
-    }
-
-    void getTopNode () {
-        heap[0] -> printHeapNode();
-    }
-    void pop() {
-        back--;
-        heap[0] = heap[back];
-        heapifyDown(0);
-    }
-
-    void remove() {
-        
     }
 
     void heapifyDown(int parent) {
@@ -91,4 +93,5 @@ public:
     }
 
     void update() {}
+    void remove() {}
 };
