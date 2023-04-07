@@ -11,12 +11,14 @@ public :
     HeapNode() {
         rbtNode = nullptr;
     }
+
     HeapNode(RBTNode *rbtNode, int rideNumber, int rideCost, int tripDuration) {
         this -> rbtNode = rbtNode;
         this -> rideNumber = rideNumber;
         this -> rideCost = rideCost;
         this -> tripDuration = tripDuration;
     }
+
     void printHeapNode() {
         cout << "(" << this -> rideNumber << ", " << 
         this -> rideCost << ", " << 
@@ -35,6 +37,7 @@ public:
     int getSize() {
         return back;
     }
+    
     void push(HeapNode *heapNode) {
         heap[back] = heapNode;
         heapifyUp(back);
