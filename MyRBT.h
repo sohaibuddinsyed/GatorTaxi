@@ -417,6 +417,8 @@ public:
     }
 
     void adjustRBT(RBTNode* p) {
+        if(!p || !p -> parent || !p -> parent -> parent) return;
+        
         RBTNode *pp = p -> parent, *gp = pp -> parent;
         if(pp -> color == BLACK) return;
 
@@ -468,7 +470,7 @@ public:
         pp -> color = BLACK;
         gp -> color = RED;
 
-        XYr(gp);
+        adjustRBT(gp);
     }
 
     void LLRotation(RBTNode* gp) {
