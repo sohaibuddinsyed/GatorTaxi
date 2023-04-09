@@ -145,7 +145,7 @@ int main(int argc, char **argv) {
     cout << "Tree size:" << rbt -> getTreeSize(rbt -> root) << endl;
     // rbt -> printTree();
 
-    // rbt -> range(8, 8);
+    rbt -> range(-10,25);
 
     // rbt -> deleteNode(4);
     // rbt -> deleteNode(9);
