@@ -130,7 +130,7 @@ public:
         return root;
     }
 
-    void range(int r1, int r2) {
+    string range(int r1, int r2) {
         RBTNode *n1 = findNode(r1, root), *n2 = findNode(r2, root);
         RBTNode *ancestor = findCommonAncestor(r1, r2, root);
 
@@ -140,7 +140,7 @@ public:
         else output += "(" + to_string(ancestor -> rideNumber) + "," + to_string(ancestor -> rideCost) + ","
             + to_string(ancestor -> tripDuration) + ")," ;
 
-        cout << output.substr(0, output.length() - 1) << endl;
+        return output.substr(0, output.length() - 1) + "\n";
     }
 
     void printInorder(int r1, int r2, string &output, RBTNode* node) {
@@ -478,6 +478,7 @@ public:
         pp -> color = BLACK;
         gp -> color = RED;
 
+        if(gp == root) gp -> color = BLACK;
         adjustRBT(gp);
     }
 
