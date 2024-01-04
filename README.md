@@ -16,7 +16,7 @@ The gatorTaxi file is the driver program which does the following:
 • Parses the input file
 • Writes output to output file
 It consists of the following helper functions:
-```
+```c++
 void print(RBT *rbt, Heap *heap, int *args, string &output);
 void printRange(RBT *rbt, Heap *heap, int *args, string &output);
 void insertRide(RBT *rbt, Heap *heap, int* args, string &output);
@@ -40,7 +40,7 @@ This is a header file which includes implementation of the Red-Black Tree.
 It has the definition of class RBTNode and class RBT described further in Chapter 2.
 1.0.4 stringUtils.h
 This is a header file which includes helper functions for file parsing.
-```
+```c++
 void parseArgs1(int *args, string line)
 void parseArgs2(int *args, string line)
 void parseArgs3(int *args, string line)
